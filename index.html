@@ -13,14 +13,31 @@
 }
 
 body {
-    background: #0f1115;
+    background: #0b0f17;
     color: white;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* glowing background */
+.glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,168,255,0.25), transparent 60%);
+    top: -200px;
+    left: -200px;
+    filter: blur(80px);
+    z-index: 0;
 }
 
 /* NAV */
 nav {
-    background: #171a21;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(23,26,33,0.8);
+    backdrop-filter: blur(10px);
     padding: 18px 40px;
     display: flex;
     justify-content: space-between;
@@ -45,18 +62,19 @@ nav a:hover {
 /* HERO */
 .hero {
     text-align: center;
-    padding: 120px 20px;
-    background: linear-gradient(180deg, #151922, #0f1115);
+    padding: 140px 20px 100px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 4.2rem;
     margin-bottom: 10px;
 }
 
 .hero p {
     color: #b6bcc8;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 /* BUTTON */
@@ -65,50 +83,64 @@ nav a:hover {
     margin-top: 25px;
     background: #00a8ff;
     color: white;
-    padding: 14px 28px;
-    border-radius: 8px;
+    padding: 14px 30px;
+    border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.2s;
+    transition: 0.25s;
 }
 
 .btn:hover {
+    transform: scale(1.05);
     background: #008fd1;
 }
 
 /* DOWNLOAD */
 .downloads {
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .download-card {
-    background: #171a21;
-    max-width: 500px;
+    background: #151922;
+    max-width: 520px;
     margin: auto;
-    padding: 30px;
-    border-radius: 12px;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.4);
 }
 
 .download-card p {
     color: #aaa;
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 /* FEATURES */
 .features {
-    padding: 60px 20px;
+    padding: 80px 20px;
     display: flex;
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
 }
 
 .feature {
-    background: #171a21;
+    background: #151922;
     width: 280px;
     padding: 25px;
     border-radius: 12px;
+}
+
+/* sticky download button */
+.sticky-download {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 20;
 }
 
 /* FOOTER */
@@ -117,12 +149,16 @@ footer {
     padding: 40px;
     color: #777;
     margin-top: 40px;
+    position: relative;
+    z-index: 1;
 }
 </style>
 
 </head>
 
 <body>
+
+<div class="glow"></div>
 
 <nav>
     <h2>Hostile Games</h2>
@@ -139,20 +175,18 @@ footer {
     <h1>Hostile Games</h1>
     <p>Play. Enjoy. Share.</p>
 
-    <a class="btn" href="#downloads">
-        Get Started
-    </a>
+    <a class="btn" href="#downloads">Get Started</a>
 </section>
 
 <section class="downloads" id="downloads">
 
     <div class="download-card">
-        <h2>Downloads</h2>
-        <p>Only available version</p>
+        <h2>Download v1</h2>
+        <p>Latest stable release</p>
 
         <a class="btn"
-           href="https://github.com/ScratchTemplates/YOURPROJECT/releases/tag/v1.0">
-            Download v1.0
+           href="https://github.com/YOURUSERNAME/YOURREPO/releases/tag/v1.0">
+            Download Now
         </a>
 
         <p style="margin-top:15px; font-size:14px;">
@@ -165,21 +199,25 @@ footer {
 <section class="features" id="features">
 
     <div class="feature">
-        <h3>Simple</h3>
-        <p>Clean and lightweight experience.</p>
+        <h3>Fast</h3>
+        <p>Optimized performance and lightweight builds.</p>
     </div>
 
     <div class="feature">
-        <h3>Fast Updates</h3>
-        <p>Direct GitHub release system.</p>
+        <h3>Modern</h3>
+        <p>Clean UI and simple experience.</p>
     </div>
 
     <div class="feature">
         <h3>Reliable</h3>
-        <p>Stable builds you can trust.</p>
+        <p>Stable official releases only.</p>
     </div>
 
 </section>
+
+<div class="sticky-download">
+    <a class="btn" href="#downloads">Download v1</a>
+</div>
 
 <footer>
     © 2026 Hostile Games
