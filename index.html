@@ -1,9 +1,176 @@
-<select onchange="location = this.value;">
-  <option>Select a version</option>
-  <option value="https://github.com/YourCompany/YourApp/releases/tag/v2.0">
-    v2.0
-  </option>
-  <option value="https://github.com/YourCompany/YourApp/releases/tag/v1.9">
-    v1.9
-  </option>
-</select>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hostile Games</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f1115;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    background: #171a21;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: linear-gradient(
+        180deg,
+        #151922,
+        #0f1115
+    );
+}
+
+.hero h1 {
+    font-size: 4rem;
+}
+
+.hero p {
+    margin-top: 15px;
+    color: #b6bcc8;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    background: #00a8ff;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.downloads {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.download-card {
+    background: #171a21;
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #252b36;
+    color: white;
+    border: none;
+}
+
+.features {
+    padding: 60px 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background: #171a21;
+    width: 300px;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>Hostile Games</h2>
+
+    <div>
+        <a href="#downloads">Downloads</a>
+        <a href="#features">Features</a>
+        <a href="https://github.com/ScratchTemplates">
+            GitHub
+        </a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Hostile Games</h1>
+    <p>Create. Play. Build.</p>
+
+    <a class="btn" href="#downloads">
+        Download Now
+    </a>
+</section>
+
+<section class="downloads" id="downloads">
+
+    <div class="download-card">
+        <h2>Downloads</h2>
+
+        <select onchange="if(this.value) window.location.href=this.value;">
+            <option>Select Version</option>
+
+            <option value="https://github.com/ScratchTemplates/YOURPROJECT/releases/tag/v2.0">
+                Version 2.0
+            </option>
+
+            <option value="https://github.com/ScratchTemplates/YOURPROJECT/releases/tag/v1.0">
+                Version 1.0
+            </option>
+        </select>
+    </div>
+
+</section>
+
+<section class="features" id="features">
+
+    <div class="feature">
+        <h3>Fast Updates</h3>
+        <p>Latest releases available directly from GitHub.</p>
+    </div>
+
+    <div class="feature">
+        <h3>Secure Downloads</h3>
+        <p>Official builds only.</p>
+    </div>
+
+    <div class="feature">
+        <h3>Version History</h3>
+        <p>Access previous releases anytime.</p>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Hostile Games
+</footer>
+
+</body>
+</html>
