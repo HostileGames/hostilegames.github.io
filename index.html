@@ -6,154 +6,69 @@
 <title>Hostile Games</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    margin: 0;
+    font-family: Arial;
     background: #0b0f17;
     color: white;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-}
-
-/* glowing background */
-.glow {
-    position: fixed;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(0,168,255,0.25), transparent 60%);
-    top: -200px;
-    left: -200px;
-    filter: blur(80px);
-    z-index: 0;
 }
 
 /* NAV */
 nav {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: rgba(23,26,33,0.8);
-    backdrop-filter: blur(10px);
-    padding: 18px 40px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-nav h2 {
-    font-size: 20px;
+    padding: 18px 40px;
+    background: rgba(20,20,30,0.7);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
+    margin: 0 12px;
     opacity: 0.8;
 }
 
-nav a:hover {
-    opacity: 1;
-}
+nav a:hover { opacity: 1; }
 
 /* HERO */
 .hero {
     text-align: center;
-    padding: 140px 20px 100px;
-    position: relative;
-    z-index: 1;
+    padding: 140px 20px;
 }
 
 .hero h1 {
-    font-size: 4.2rem;
-    margin-bottom: 10px;
+    font-size: 4rem;
 }
 
 .hero p {
     color: #b6bcc8;
-    font-size: 1.3rem;
 }
 
 /* BUTTON */
 .btn {
     display: inline-block;
     margin-top: 25px;
+    padding: 14px 28px;
     background: #00a8ff;
     color: white;
-    padding: 14px 30px;
-    border-radius: 10px;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.25s;
+    border-radius: 10px;
 }
 
-.btn:hover {
-    transform: scale(1.05);
-    background: #008fd1;
-}
-
-/* DOWNLOAD */
-.downloads {
-    padding: 80px 20px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-
-.download-card {
-    background: #151922;
-    max-width: 520px;
-    margin: auto;
-    padding: 35px;
-    border-radius: 14px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.4);
-}
-
-.download-card p {
-    color: #aaa;
-    margin-top: 10px;
-}
-
-/* FEATURES */
-.features {
-    padding: 80px 20px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 1;
-}
-
-.feature {
-    background: #151922;
-    width: 280px;
-    padding: 25px;
-    border-radius: 12px;
-}
-
-/* sticky download button */
-.sticky-download {
+/* GLOW */
+.glow {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 20;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 40px;
-    color: #777;
-    margin-top: 40px;
-    position: relative;
-    z-index: 1;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0,168,255,0.25), transparent 60%);
+    top: -150px;
+    left: -150px;
+    filter: blur(80px);
 }
 </style>
-
 </head>
 
 <body>
@@ -161,13 +76,17 @@ footer {
 <div class="glow"></div>
 
 <nav>
-    <h2>Hostile Games</h2>
+    <div><b>Hostile Games</b></div>
+
     <div>
-        <a href="#downloads">Downloads</a>
-        <a href="#features">Features</a>
-        <a href="https://github.com/HostileGames">
-            GitHub
-        </a>
+        <a href="index.html">Home</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="changelog.html">Changelog</a>
+
+        <!-- GitHub preview -->
+        <div style="display:inline-block; position:relative;">
+            <a href="https://github.com/HostileGames" target="_blank">GitHub</a>
+        </div>
     </div>
 </nav>
 
@@ -175,53 +94,8 @@ footer {
     <h1>Hostile Games</h1>
     <p>Play. Enjoy. Share.</p>
 
-    <a class="btn" href="#downloads">Get Started</a>
+    <a class="btn" href="downloads.html">Download v1</a>
 </section>
-
-<section class="downloads" id="downloads">
-
-    <div class="download-card">
-        <h2>Download v1</h2>
-        <p>Latest stable release</p>
-
-        <a class="btn"
-           href="https://github.com/YOURUSERNAME/YOURREPO/releases/tag/v1.0">
-            Download Now
-        </a>
-
-        <p style="margin-top:15px; font-size:14px;">
-            More updates coming soon
-        </p>
-    </div>
-
-</section>
-
-<section class="features" id="features">
-
-    <div class="feature">
-        <h3>Fast</h3>
-        <p>Optimized performance and lightweight builds.</p>
-    </div>
-
-    <div class="feature">
-        <h3>Modern</h3>
-        <p>Clean UI and simple experience.</p>
-    </div>
-
-    <div class="feature">
-        <h3>Reliable</h3>
-        <p>Stable official releases only.</p>
-    </div>
-
-</section>
-
-<div class="sticky-download">
-    <a class="btn" href="#downloads">Download v1</a>
-</div>
-
-<footer>
-    © 2026 Hostile Games
-</footer>
 
 </body>
 </html>
